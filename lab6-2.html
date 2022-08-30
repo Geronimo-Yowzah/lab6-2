@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab6-2</title>
+    <script>
+        function cal(){
+            var textInput1 = document.getElementById("text1");
+            var textInput2 = document.getElementById("text2");
+            var textInput3 = document.getElementById("text3");
+            var check = document.getElementById("select");
+            
+                        
+            var num1 = textInput1.value;
+            var num2 = textInput2.value;
+
+            var check1 = check.value;
+
+            if(check1 == "+"){
+                result = parseInt(num1)+parseInt(num2);
+            }
+            else if(check1 == "-"){
+                result = parseInt(num1)-parseInt(num2);
+            }
+            else if(check1 == "*"){
+                result = parseInt(num1)*parseInt(num2);
+            }
+            else if(check1 == "/"){
+                result = parseInt(num1)/parseInt(num2);
+            }
+
+            textInput3.value = result;
+
+        }
+        window.onload = function(){
+            var clickon = document.getElementById("compute");
+            clickon.onclick = cal;
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="text1">
+    <select id="select">
+        <option >+</option>
+        <option >-</option>
+        <option >*</option>
+        <option >/</option>
+    </select>
+    <input type="text" id="text2">=<input type="text" id="text3">
+    <input type="button" id="compute" value="Compute" onclick="cal()">
+</body>
+</html>
